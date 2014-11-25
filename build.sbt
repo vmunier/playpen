@@ -31,6 +31,13 @@ wartremoverErrors ++= Seq(Wart.Any, Wart.Any2StringAdd, Wart.AsInstanceOf, Wart.
   Wart.EitherProjectionPartial, Wart.IsInstanceOf, Wart.NonUnitStatements, Wart.Null, Wart.OptionPartial, Wart.Product,
   Wart.Return, Wart.Serializable, Wart.TryPartial, Wart.Var, Wart.ListOps)
 
+resolvers += "typesafe-releases" at "http://repo.typesafe.com/typesafe/releases/"
+
+libraryDependencies += "joda-time"          % "joda-time"    % "2.5"
+libraryDependencies += "org.joda"           % "joda-convert" % "1.2"
+libraryDependencies += "com.typesafe.play" %% "play"         % "2.3.6"
+libraryDependencies += "org.slf4j"          % "slf4j-api"    % "1.7.7"
+
 typelevelDefaultSettings
 typelevelBuildInfoSettings
 
