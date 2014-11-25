@@ -27,7 +27,9 @@ scalacOptions  += "-Ywarn-unused-import"
 scalacOptions  += "-Ywarn-value-discard"
 
 // wartremoverErrors ++= Warts.unsafe // Once sbt-wartremover 0.12+ is out
-wartremoverErrors ++= Seq(Wart.Any, Wart.Any2StringAdd, Wart.AsInstanceOf, Wart.DefaultArguments,
+wartremoverErrors ++= Seq(
+  // Wart.Any, // Removed to keep BuildInfo
+  Wart.Any2StringAdd, Wart.AsInstanceOf, Wart.DefaultArguments,
   Wart.EitherProjectionPartial, Wart.IsInstanceOf, Wart.NonUnitStatements, Wart.Null, Wart.OptionPartial, Wart.Product,
   Wart.Return, Wart.Serializable, Wart.TryPartial, Wart.Var, Wart.ListOps)
 
