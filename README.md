@@ -1,4 +1,4 @@
-# Playpen: A way to Play! safely
+# Playpen: A way to Play! safely - NOT YET PUBLISHED
 
 [![Latest Version](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.beamly.playpen/playpen_11)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt) 
@@ -10,7 +10,7 @@
 
 A general suite of utilities and other common code when building Play apps.
 
-## How to Use
+## How to Use (NOTE: build it yourself for now)
 
 #### Add playpen to your build system.
 
