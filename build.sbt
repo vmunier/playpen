@@ -6,7 +6,7 @@ import sbtrelease.ReleasePlugin.ReleaseKeys._
 
 organization := "com.beamly.playpen"
 name := "playpen"
-// lastRelease in ThisBuild := Relative(0, Final)
+lastRelease in ThisBuild := Relative(0, Final)
 
 description := "playpen: A way to Play! safely"
 homepage := Some(url("https://github.com/beamly/playpen"))
