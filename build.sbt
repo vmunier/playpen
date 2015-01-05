@@ -14,7 +14,7 @@ startYear := Some(2014)
 licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 
 scalaVersion := "2.11.4"
-crossScalaVersions := Seq(scalaVersion.value)
+crossScalaVersions := Seq(scalaVersion.value, "2.10.4")
 scalacOptions ++= Seq("-encoding", "utf8")
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Xlint")
 scalacOptions  += "-Xfatal-warnings"
@@ -23,7 +23,9 @@ scalacOptions  += "-Yinline-warnings"
 scalacOptions  += "-Yno-adapted-args"
 scalacOptions  += "-Ywarn-dead-code"
 scalacOptions  += "-Ywarn-numeric-widen"
-scalacOptions  += "-Ywarn-unused-import"
+scalacOptions ++= CrossVersion partialVersion scalaVersion.value collect {
+  case (2, scalaMajor) if scalaMajor > 11 => Seq("-Ywarn-unused-import")
+} getOrElse Seq.empty
 scalacOptions  += "-Ywarn-value-discard"
 
 // wartremoverErrors ++= Warts.unsafe // Once sbt-wartremover 0.12+ is out
