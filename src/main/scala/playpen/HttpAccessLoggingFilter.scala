@@ -30,7 +30,8 @@ object HttpAccessLoggingFilter extends EssentialFilter {
           "rsp.duration"    → requestTime,
           "req.ipAddresses" → rh.remoteAddress,
           "req.userAgent"   → (rh.headers get USER_AGENT getOrElse "-"),
-          "rsp.size"        → (result.header.headers get CONTENT_LENGTH getOrElse "-")) // unsure
+        // TODO: Figure out how to really do Play response size
+          "rsp.size"        → (result.header.headers get CONTENT_LENGTH getOrElse "0"))
         // TODO: requestId
 
         val oldContextMap = Option(MDC.getCopyOfContextMap) getOrElse new ju.HashMap[String, String]()
