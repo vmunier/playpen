@@ -1,4 +1,4 @@
-package playpen
+package playpen.cors
 import play.api.mvc.RequestHeader
 
 case class CorsParams(origin: String, method: String, headers: Seq[String])
