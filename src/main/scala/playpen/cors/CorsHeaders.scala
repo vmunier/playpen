@@ -7,7 +7,7 @@ object CorsHeaders {
   lazy val allowedMethods = current.configuration.getStringSeq("playpen.cors.allowed.methods").getOrElse(Seq("POST", "GET", "OPTIONS", "PUT", "DELETE"))
 
   def headers(request: RequestHeader): Seq[(String, String)] = request match {
-    case CorsParams(params) if allowedOrigins.isEmpty | allowedOrigins.exists(params.origin.endsWith(_)) =>
+    case CorsParams(params) if allowedOrigins.exists(orig => orig == "*" | params.origin.endsWith(orig)) =>
       Seq(
         "Access-Control-Allow-Origin" -> params.origin,
         "Access-Control-Allow-Methods" -> allowedMethods.mkString(","),
