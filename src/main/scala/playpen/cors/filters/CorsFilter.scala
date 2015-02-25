@@ -2,7 +2,7 @@ package playpen.cors.filters
 
 import play.api.mvc.{EssentialFilter, EssentialAction, RequestHeader}
 import playpen.cors.CorsHeaders
-import scala.concurrent.ExecutionContext.Implicits.global
+import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
 object CorsFilter extends EssentialFilter {
   def apply(next: EssentialAction) = new EssentialAction {
